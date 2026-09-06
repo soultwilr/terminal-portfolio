@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terminal portfolio — soultwilr.dev" />
+  <title>soultwilr.dev — /dev/null</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CRT Overlay Effects -->
+  <div class="crt-overlay" aria-hidden="true">
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- Matrix Rain Canvas (hidden by default) -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- Main Terminal -->
+  <div class="terminal-wrapper">
+    <div class="terminal-chrome">
+      <!-- Fake window chrome -->
+      <div class="chrome-bar">
+        <div class="chrome-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="chrome-title" id="chrome-title">visitor@soultwilr.dev — bash</div>
+        <div class="chrome-spacer"></div>
+      </div>
+
+      <!-- Terminal Output Area -->
+      <div class="terminal-body" id="terminal-body">
+        <div id="output-area" role="log" aria-live="polite" aria-atomic="false"></div>
+
+        <!-- Input Line -->
+        <div class="input-line" id="input-line">
+          <span class="prompt" id="prompt-display"></span>
+          <div class="input-field-wrap">
+            <input
+              type="text"
+              id="cmd-input"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="Terminal input"
+              placeholder=""
+            />
+            <span class="fake-cursor" id="fake-cursor">▋</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="status-bar" id="status-bar">
+    <div class="status-left">
+      <span class="status-item" id="status-mode">NORMAL</span>
+      <span class="status-sep">│</span>
+      <span class="status-item" id="status-user">visitor@soultwilr.dev</span>
+    </div>
+    <div class="status-right">
+      <span class="status-item" id="status-theme">THEME: phosphor</span>
+      <span class="status-sep">│</span>
+      <span class="status-item" id="status-time"></span>
+    </div>
+  </div>
+
+  <!-- Theme Picker (hidden, toggled by theme command) -->
+  <div class="theme-picker" id="theme-picker" aria-hidden="true">
+    <button data-theme="phosphor" class="theme-btn active">PHOSPHOR</button>
+    <button data-theme="amber"    class="theme-btn">AMBER</button>
+    <button data-theme="synthwave" class="theme-btn">SYNTHWAVE</button>
+    <button data-theme="matrix"   class="theme-btn">MATRIX</button>
+    <button data-theme="ice"      class="theme-btn">ICE</button>
+  </div>
+
+  <script src="terminal.js"></script>
+</body>
+</html>
+

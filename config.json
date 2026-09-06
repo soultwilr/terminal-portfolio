@@ -1,0 +1,303 @@
+{
+  "user": {
+    "name": "soultwilr",
+    "title": "full-stack developer & digital architect",
+    "location": "india",
+    "email": "soultwilr@gmail.com",
+    "available": true
+  },
+
+  "theme": {
+    "primary":    "#00ff9f",
+    "secondary":  "#00b8ff",
+    "accent":     "#ff00aa",
+    "warning":    "#ffaa00",
+    "error":      "#ff3333",
+    "bg":         "#0a0a0f",
+    "surface":    "#0f0f1a",
+    "text":       "#c8ffd4",
+    "muted":      "#3a5c42",
+    "cursor":     "#00ff9f",
+    "scanlines":  true,
+    "crt_flicker": true,
+    "boot_sequence": true
+  },
+
+
+  "ascii_art": [
+" ░▒▓███████▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░    ",
+"░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ",
+"░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ",
+" ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░       ",
+"       ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ",
+"       ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░       ",
+"░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░ "
+  ], 
+
+  "banner_tagline": "architect of the digital void",
+
+  "prompt": {
+    "user": "visitor",
+    "host": "soultwilr.dev",
+    "symbol": "❯"
+  },
+
+  "boot_messages": [
+    { "text": "BIOS v2.4.1 initializing...", "delay": 0 },
+    { "text": "Memory check: 640K OK", "delay": 200 },
+    { "text": "Loading kernel modules...", "delay": 350 },
+    { "text": "[  OK  ] Started Network Service", "delay": 500 },
+    { "text": "[  OK  ] Mounted /home/soultwilr", "delay": 650 },
+    { "text": "[  OK  ] Started SSH daemon", "delay": 800 },
+    { "text": "Establishing secure connection to soultwilr.dev...", "delay": 1000 },
+    { "text": "Connection established. Fingerprint: ed25519 SHA256:xK3v4", "delay": 1300 },
+    { "text": "Welcome. Type 'help' to see available commands.", "delay": 1600 }
+  ],
+
+  "commands": {
+    "help": {
+      "description": "show available commands",
+      "output": [
+        "┌──────────────────────────┐",
+        "│   AVAILABLE COMMANDS     │",
+        "└──────────────────────────┘",
+        "",
+        "  about      → who is soultwilr?",
+        "  skills     → tech stack",
+        "  projects   → featured work",
+        "  experience → work history",
+        "  contact    → get in touch",
+        "  social     → my profiles",
+        "  pgp        → public PGP key",
+        "  theme      → color schemes",
+        "  matrix     → ( ͡° ͜ʖ ͡°)",
+        "  sudo       → try your luck",
+        "  clear      → clear screen",
+        "  help       → this message",
+        "",
+        "  ↑/↓ history · Tab complete"
+      ]
+    },
+
+    "about": {
+      "description": "who is soultwilr?",
+      "output": [
+        "── ABOUT ME ────────────────",
+        "",
+        "  Name     : soultwilr",
+        "  Role     : Full-Stack Dev",
+        "  Location : India 🇮🇳",
+        "  Status   : ● Available",
+        "",
+        "  I build things for the web",
+        "  — from pixel-perfect UIs",
+        "  to scalable backends.",
+        "  Obsessed with clean code,",
+        "  terminal aesthetics, and",
+        "  the art of engineering.",
+        "",
+        "  When not coding I'm:",
+        "  → Exploring the internet",
+        "  → Open-source contrib.",
+        "  → Breaking homelab things",
+        "  → Reading distrib. systems",
+        "",
+        "  \"Any sufficiently advanced",
+        "   tech is indistinguishable",
+        "   from magic.\" — A.C. Clarke"
+      ]
+    },
+
+    "skills": {
+      "description": "technical expertise",
+      "output": [
+        "── TECH STACK ──────────────",
+        "",
+        "  ► LANGUAGES",
+        "    JS / TS    ████████░░ 90%",
+        "    Python     ███████░░░ 78%",
+        "    Rust       █████░░░░░ 60%",
+        "    Go         █████░░░░░ 55%",
+        "    C / C++    ████░░░░░░ 48%",
+        "",
+        "  ► FRONTEND",
+        "    React · Next.js · Vue 3",
+        "    SvelteKit · Three.js",
+        "    WebGL · Tailwind CSS",
+        "",
+        "  ► BACKEND",
+        "    Node.js · Bun · FastAPI",
+        "    Postgres · Redis · Mongo",
+        "    REST · GraphQL · WS",
+        "",
+        "  ► DEVOPS",
+        "    Docker · K8s · Terraform",
+        "    GH Actions · Cloudflare",
+        "    Linux (I use Arch btw)",
+        "",
+        "  ► TOOLS",
+        "    Neovim · tmux · Git · Figma"
+      ]
+    },
+
+    "projects": {
+      "description": "featured work",
+      "output": [
+        "── PROJECTS ────────────────",
+        "",
+        "  [01] ascify",
+        "  converts images and real-time videos into ASCII art.",
+        "  lightweight command-line tool written in C.",
+        "  Stack: Shell · C · ffmpeg",
+        "  → https://github.com/soultwilr/ascify",
+        "",
+        "  [02] THIS WEBSITE",
+        "  Terminal portfolio.",
+        "  Pure HTML/CSS/JS.",
+        "  → https://github.com/soultwilr/terminal-portfolio"
+      ]
+    },
+
+    "experience": {
+      "description": "work history",
+      "output": [
+        "── EXPERIENCE ──────────────",
+        "",
+        "Nothing yet. I'm a self-taught dev, building my own projects and learning as I go."
+      ]
+    },
+
+    "contact": {
+      "description": "get in touch",
+      "output": [
+        "── CONTACT ─────────────────",
+        "",
+        "  ✉  soultwilr@gmail.com",
+        "  💬 Discord: soultwilr#0000",
+        "  📅 cal.com/soultwilr",
+        "",
+        "  Open to:",
+        "  → Full-time remote",
+        "  → Freelance / contract",
+        "  → Open-source collab",
+        "",
+        "  Reply time: ~24 hours.",
+        "  PGP preferred (type 'pgp')"
+      ]
+    },
+
+    "social": {
+      "description": "social links",
+      "output": [
+        "── SOCIAL ──────────────────",
+        "",
+        "  GitHub",
+        "  → github.com/soultwilr",
+        "",
+        "  Twitter",
+        "  → twitter.com/soultwilr",
+        "",
+        "  LinkedIn",
+        "  → linkedin.com/in/soultwilr",
+        "",
+        "  Dev.to",
+        "  → dev.to/soultwilr",
+        "",
+        "  10+ commits · 2+ repos"
+      ]
+    },
+
+    "pgp": {
+      "description": "PGP public key",
+      "output": [
+        "-----BEGIN PGP PUBLIC KEY BLOCK-----",
+        "",
+        "mQINBGRkY2EBEAC7xK3v4L7mN2pQ9rS1",
+        "tU6wX8yZ0aB1cD2eF3gH4iJ5kL6mN7oP",
+        "8qR9sT0uV1wX2yZ3aB4cD5eF6gH7iJ8k",
+        "...truncated for display...",
+        "",
+        "-----END PGP PUBLIC KEY BLOCK-----",
+        "",
+        "Fingerprint:",
+        "DEAD BEEF CAFE BABE",
+        "1337 FACE FADE C0DE"
+      ]
+    },
+
+    "theme": {
+      "description": "cycle color themes",
+      "output": [
+        "Cycling theme... done.",
+        "",
+        "  phosphor  · amber",
+        "  synthwave · matrix · ice",
+        "",
+        "  (picker opened on the right)"
+      ]
+    },
+
+    "matrix": {
+      "description": "???",
+      "output": ["[MATRIX MODE ACTIVATED]"]
+    },
+
+    "sudo": {
+      "description": "superuser access",
+      "output": [
+        "sudo: permission denied.",
+        "This incident is reported.",
+        "",
+        "  ...just kidding. But no.",
+        "  Nice try though. 👀"
+      ]
+    },
+
+    "clear": {
+      "description": "clear the terminal",
+      "output": []
+    }
+  },
+
+  "easter_eggs": {
+    "vim": [
+      "You know vim? Respect.",
+      "To exit: :wq",
+      "(or :q! if you broke it)"
+    ],
+    "nano": [
+      "nano? We don't do that here.",
+      "No judgement though."
+    ],
+    "ls": [
+      "drwxr-xr-x  about/",
+      "drwxr-xr-x  projects/",
+      "drwxr-xr-x  skills/",
+      "-rw-r--r--  config.json",
+      "-rw-r--r--  .secrets",
+      "             (nice try)"
+    ],
+    "cat .secrets": [
+      "Permission denied.",
+      "(the real secret is",
+      " consistency)"
+    ],
+    "pwd": ["/home/visitor/soultwilr.dev"],
+    "whoami": ["visitor (you're the user)"],
+    "date": ["_DYNAMIC_DATE_"],
+    "uname -a": [
+      "Linux soultwilr.dev 6.6.0-soultwilr",
+      "#1 SMP x86_64 GNU/Linux"
+    ],
+    "uptime": ["_DYNAMIC_UPTIME_"],
+    "exit": [
+      "Nice try. You can't escape.",
+      "(Close the tab if you dare.)"
+    ],
+    "hack": [
+      "ACCESS GRANTED",
+      "  ... just kidding.",
+      "  But imagine. 🔓"
+    ]
+  }
+}
