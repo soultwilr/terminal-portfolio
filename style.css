@@ -396,6 +396,26 @@ body {
   color: var(--clr-error);
 }
 
+/* Terminal Links */
+.terminal-link {
+  color: var(--clr-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+.terminal-link:hover {
+  color: var(--clr-primary);
+  text-shadow: var(--glow-primary);
+}
+
+.terminal-link:active {
+  color: var(--clr-accent);
+}
+
 /* ── 8. Input Line ────────────────────────────────────────── */
 .input-line {
   display: flex;

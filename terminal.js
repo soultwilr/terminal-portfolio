@@ -64,6 +64,36 @@ function escHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
+/** Convert URLs and emails in text into clickable <a> tags */
+function parseLinks(htmlStr) {
+  // 1. Full URLs (https://... or http://...)
+  const urlRegex = /(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/g;
+  let parsed = htmlStr.replace(urlRegex, url => {
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="terminal-link">${url}</a>`;
+  });
+
+  // 2. Emails (user@domain.tld)
+  const emailRegex = /(^|[\s(>])([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+  parsed = parsed.replace(emailRegex, (match, prefix, email) => {
+    if (match.includes('href=')) return match;
+    return `${prefix}<a href="mailto:${email}" class="terminal-link">${email}</a>`;
+  });
+
+  // 3. Domain links without protocol (e.g. github.com/user, cal.com/user)
+  const domainRegex = /(^|[\s(>→])(?<!:\/\/|@)((?:[a-zA-Z0-9-]+\.)+(?:com|org|net|io|dev|app|me|co|in)(?:\/[^\s<]*[^<.,:;"')\]\s])?)/g;
+  parsed = parsed.replace(domainRegex, (match, prefix, domainUrl) => {
+    if (match.includes('href=') || domainUrl.includes('@')) return match;
+    return `${prefix}<a href="https://${domainUrl}" target="_blank" rel="noopener noreferrer" class="terminal-link">${domainUrl}</a>`;
+  });
+
+  return parsed;
+}
+
+/** Escape and format a line of text for output */
+function formatLine(str) {
+  return parseLinks(escHtml(str));
+}
+
 /** Scroll terminal to the bottom */
 function scrollBottom() {
   dom.body.scrollTop = dom.body.scrollHeight;
@@ -108,7 +138,7 @@ async function printLines(lines, opts = {}) {
       scrollBottom();
       await typewriteLine(span, raw);
     } else {
-      span.innerHTML = escHtml(raw);
+      span.innerHTML = formatLine(raw);
       block.appendChild(span);
     }
 
@@ -147,6 +177,7 @@ async function typewriteLine(el, text, speed = 18) {
     const jitter = Math.random() < 0.05 ? speed * 3 : speed;
     await sleep(jitter);
   }
+  el.innerHTML = formatLine(text);
 }
 
 /** Print a command echo (the "prompt + command" line) */
@@ -540,7 +571,7 @@ function bindEvents() {
   dom.input.addEventListener('input', updateCursorPos);
 
   // Focus input on click anywhere on terminal
-  document.addEventListener('click', () => {
+  document.addEventListener('click', e => {
     // Stop matrix on click
     if (state.matrixActive) {
       cancelAnimationFrame(state.matrixAnimId);
@@ -549,7 +580,9 @@ function bindEvents() {
       dom.statusMode.textContent = 'NORMAL';
       printLines(['', 'Matrix mode deactivated.', ''], {});
     }
-    dom.input.focus();
+    if (!e.target.closest('a') && !e.target.closest('.theme-picker')) {
+      dom.input.focus();
+    }
   });
 
   // Theme picker buttons
